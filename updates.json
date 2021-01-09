@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "{Facebook.Desuggester@gmail.com}": {
+      "updates": [
+        {
+          "version": "69",
+          "update_link": "https://github.com/stanoychev/FacebookDesuggester/blob/main/FacebookDesuggester.xpi"
+        }
+      ]
+    }
+  }
+}

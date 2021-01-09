@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Facebook Desuggester",
+  "version": "69",
+  "description": "Extension attempting to limit the annoying facebook experience of malware clickbaits.",
+  "icons": {
+    "48": "icons/48.png",
+    "96": "icons/96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Facebook.Desuggester@gmail.com",
+      "update_url": "https://github.com/stanoychev/FacebookDesuggester/blob/main/updates.json"
+    }
+  }
+}
