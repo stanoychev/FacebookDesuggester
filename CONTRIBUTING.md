@@ -4,7 +4,7 @@ Clean code.
 Well named variables.
 Short functions.
 Stateless programming.
-Subscribtions disposing.
+Subscriptions disposing.
 
 Priorities:
 1. No exceptions
