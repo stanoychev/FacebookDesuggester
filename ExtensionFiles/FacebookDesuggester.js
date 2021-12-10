@@ -5,10 +5,20 @@
     function deleteSuggestions(feedSubelements) {
         for (const feedSubelement of feedSubelements) {
             [...feedSubelement.target.querySelectorAll('div[data-pagelet*="FeedUnit"]')]
-            .forEach(x => {
-                let isSponsored = x.querySelector("a[aria-label=Sponsored]") != null;
+            .forEach(feedUnit => {
 
-                let spans = [...x.querySelectorAll("span")];
+                let spans = [...feedUnit.querySelectorAll("span")];
+
+                let filteredSpans = spans
+                    .filter(element => element.getAttribute("style") == null
+                        && element.getAttribute("class") != null);
+
+                let name = "";
+                filteredSpans
+                    .filter(x => x.firstChild.nodeValue != null)
+                    .forEach(x => name = name + x.firstChild.nodeValue);
+
+                let isSponsored = name.includes("Sponsored");
 
                 let isSuggestedForYou = spans.some(x => x.textContent.includes("Suggested for you"));
 
@@ -29,7 +39,7 @@
                     if (isSuggestedEvent)
                         console.log(`Deleted >>Coronavirus (COVID-19) information<<`);
 
-                    x.remove();
+                    feedUnit.remove();
                 }
             });
         }
